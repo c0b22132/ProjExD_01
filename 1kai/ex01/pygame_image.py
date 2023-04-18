@@ -9,7 +9,8 @@ def main():
     kokaton=pg.image.load("1kai/ex01/fig/3.png")
     kk_fl=pg.transform.flip(kokaton,True,False)
     kk_rt=pg.transform.rotate(kk_fl,10)
-    kk_lst=[kk_fl,kk_rt]
+    kk_rt_n=pg.transform.rotate(kk_fl,5)
+    kk_lst=[kk_fl,kk_rt_n,kk_rt,kk_rt_n]
 
     tmr = 0
     bg_x=0
@@ -19,9 +20,10 @@ def main():
             if event.type == pg.QUIT: return
 
         tmr += 1
-        bg_x-=1
-        screen.blit(bg_img, [bg_x, 0])
-        screen.blit(kk_lst[tmr%2],[300,200])
+        x=tmr%1600
+        screen.blit(bg_img, [-x, 0])
+        screen.blit(bg_img,[1600-x,0])
+        screen.blit(kk_lst[tmr%4],[300,200])
 
         pg.display.update()
         clock.tick(100)
