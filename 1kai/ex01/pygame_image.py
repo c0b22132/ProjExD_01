@@ -12,13 +12,15 @@ def main():
     kk_lst=[kk_fl,kk_rt]
 
     tmr = 0
+    bg_x=0
 
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
         tmr += 1
-        screen.blit(bg_img, [0, 0])
+        bg_x-=1
+        screen.blit(bg_img, [bg_x, 0])
         screen.blit(kk_lst[tmr%2],[300,200])
 
         pg.display.update()
