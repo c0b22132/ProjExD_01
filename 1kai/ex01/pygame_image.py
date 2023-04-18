@@ -8,6 +8,8 @@ def main():
     bg_img = pg.image.load("1kai/ex01/fig/pg_bg.jpg")
     kokaton=pg.image.load("1kai/ex01/fig/3.png")
     kk_fl=pg.transform.flip(kokaton,True,False)
+    kk_rt=pg.transform.rotate(kk_fl,10)
+    kk_lst=[kk_fl,kk_rt]
 
     tmr = 0
 
